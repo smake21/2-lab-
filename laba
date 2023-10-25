@@ -1,0 +1,74 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int number;
+    
+    cout << "Введите трехзначное число: ";
+    cin >> number;
+    
+    // Проверка, что введено трехзначное число
+    if (number < 100 || number > 999) {
+        cout << "Вы ввели неверное число!" << endl;
+        return 1;
+    }
+
+    int lastDigit = number % 10; // Получаем последнюю цифру
+    int firstTwoDigits = number / 10; // Получаем две первые цифры
+    
+    // Собираем новое число
+    int newNumber = lastDigit * 100 + firstTwoDigits;
+    
+    cout << "Измененное число: " << newNumber << endl;
+    
+    return 0;
+}
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int x1, y1, x2, y2;
+
+    // Ввод координат
+    cout << "Введите координаты поля 1 (x1 y1): ";
+    cin >> x1 >> y1;
+    
+    cout << "Введите координаты поля 2 (x2 y2): ";
+    cin >> x2 >> y2;
+
+    // Проверка условия
+    int deltaX = abs(x1 - x2);
+    int deltaY = abs(y1 - y2);
+
+    if ((deltaX == 1 && deltaY == 0) || (deltaX == 0 && deltaY == 1) || (deltaX == 1 && deltaY == 1)) {
+        cout << "Король может перейти с одного поля на другое за один ход." << endl;
+    } else {
+        cout << "Король не может перейти с одного поля на другое за один ход." << endl;
+    }
+
+    return 0;
+}
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double x;
+    const double pi = 3.14159265358979323846;
+    const double sin37 = sin(37 * pi / 180);
+
+    cout << "Введите значение x: ";
+    cin >> x;
+
+    double y = (3 * pi * pow(sin(pi + 2 * x), 3) * cbrt(abs(x - 0.5 * exp(x)))) / (pow(3, x - 5) * log(sin37));
+
+    cout << "Значение функции y = " << y << endl;
+
+    return 0;
+}
+
